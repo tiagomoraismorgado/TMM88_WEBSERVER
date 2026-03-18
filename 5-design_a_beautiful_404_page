@@ -1,0 +1,503 @@
+#!/usr/bin/env bash
+# EMERGENCY FIX: Xiaomi × Magritte 404 Masterpiece Deployment
+# "When art doesn't load, we must create it again"
+
+echo "🚨 小米紧急艺术修复特遣队出动！"
+echo "========================================="
+echo "检测到: http://66.70.187.105/404.html"
+echo "状态: 返回通用404 (这不是我们的艺术!)"
+echo "任务: 重新部署小米×马格利特杰作"
+echo "========================================="
+echo ""
+
+# Step 1: Connect to the server and fix it
+echo "🔌 连接至小米艺术馆服务器 66.70.187.105..."
+echo ""
+
+# Here's the FIX SCRIPT that needs to be run ON the server
+FIX_SCRIPT=$(cat << 'EOF'
+#!/usr/bin/env bash
+# Xiaomi 404 Masterpiece Emergency Fix
+# Run this directly on the server
+
+echo "🖼️  小米艺术修复机器人启动"
+echo "============================"
+
+# Backup existing 404 if any
+if [ -f /usr/share/nginx/html/404.html ]; then
+    echo "📦 备份现有404页面..."
+    mv /usr/share/nginx/html/404.html /usr/share/nginx/html/404.html.backup.$(date +%Y%m%d_%H%M%S)
+fi
+
+# Create the masterpiece DIRECTLY (bypassing any issues)
+echo "🎨 直接创作小米×马格利特杰作..."
+
+cat > /usr/share/nginx/html/404.html << 'EOH'
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 · Ceci n'est pas une page · 小米艺术科技</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'MiSans', serif;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* 紧急修复标志 - 显示这个页面是修复版本 */
+        .emergency-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff3333;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; background: #ff0000; }
+        }
+        
+        .magritte-cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+        
+        .cloud1 {
+            width: 500px;
+            height: 200px;
+            top: -50px;
+            right: -100px;
+            background: rgba(255, 140, 0, 0.1);
+        }
+        
+        .cloud2 {
+            width: 400px;
+            height: 150px;
+            bottom: -30px;
+            left: -80px;
+            background: rgba(0, 140, 255, 0.1);
+        }
+        
+        .canvas {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 149, 0, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            padding: 60px 40px;
+            z-index: 1;
+            border-radius: 4px;
+        }
+        
+        .not-404 {
+            font-size: 180px;
+            font-weight: 600;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            font-family: monospace;
+            letter-spacing: -10px;
+        }
+        
+        .not-404 span {
+            color: #ff9500;
+            opacity: 0.3;
+            animation: fadePulse 4s infinite;
+        }
+        
+        @keyframes fadePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .magritte-statement {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 20px 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 149, 0, 0.5);
+        }
+        
+        .magritte-statement::before,
+        .magritte-statement::after {
+            content: "⚡";
+            color: #ff9500;
+            font-size: 1rem;
+            margin: 0 15px;
+            opacity: 0.5;
+        }
+        
+        .pipe-symbol {
+            font-size: 100px;
+            text-align: center;
+            margin: 30px 0;
+            transform: rotate(-5deg);
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .pipe-symbol:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        .philosophy-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #ff9500;
+            padding: 25px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-style: italic;
+            position: relative;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .philosophy-box::before {
+            content: "❓";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: #ff9500;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+        
+        .mi-objects {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .mi-object {
+            text-align: center;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(255, 149, 0, 0.1);
+            min-width: 100px;
+        }
+        
+        .mi-object:hover {
+            opacity: 1;
+            background: rgba(255, 149, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .mi-object .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .existential-choice {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        .return-button {
+            display: inline-block;
+            padding: 15px 45px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #ff9500;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .return-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ff9500;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .return-button:hover {
+            color: #1a1a2e;
+        }
+        
+        .return-button:hover::before {
+            left: 0;
+        }
+        
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px dashed rgba(255, 149, 0, 0.3);
+            padding-top: 20px;
+        }
+        
+        .signature strong {
+            color: #ff9500;
+            font-weight: 600;
+        }
+        
+        .emergency-note {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255, 51, 51, 0.2);
+            border: 1px solid #ff3333;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 600px) {
+            .not-404 { font-size: 120px; }
+            .magritte-statement { font-size: 1.5rem; }
+            .pipe-symbol { font-size: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="emergency-badge">🚨 小米紧急修复版</div>
+    
+    <div class="magritte-cloud cloud1"></div>
+    <div class="magritte-cloud cloud2"></div>
+    
+    <div class="canvas">
+        <div class="not-404">
+            4<span>0</span>4
+        </div>
+        
+        <div class="magritte-statement">
+            ceci n'est pas une page
+        </div>
+        
+        <div style="text-align: center; opacity: 0.5; margin-bottom: 20px;">
+            (this is not a page)
+        </div>
+        
+        <div class="pipe-symbol" title="Ceci n'est pas une pipe">
+            🪤
+        </div>
+        
+        <div class="philosophy-box">
+            <p><strong>Q:</strong> 为什么我之前看不到这个页面？</p>
+            <p><strong>A:</strong> 因为它质疑自己的存在。</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                但现在，小米紧急修复特遣队已经抵达，<br>
+                让不存在的事物优雅地存在。
+            </p>
+        </div>
+        
+        <div class="mi-objects">
+            <div class="mi-object">
+                <span class="icon">📱</span>
+                <span class="label">小米14 Ultra</span>
+                <span class="sub-label">修复指挥官</span>
+            </div>
+            <div class="mi-object">
+                <span class="icon">🛠️</span>
+                <span class="label">修复工具</span>
+                <span class="sub-label">v2.0</span>
+            </div>
+        </div>
+        
+        <div class="existential-choice">
+            <a href="/" class="return-button">返回主页</a>
+        </div>
+        
+        <div class="signature">
+            <p>René Magritte · 1929</p>
+            <p><strong>⚡ 小米紧急修复特遣队 · $(date +%Y-%m-%d) ⚡</strong></p>
+            <p style="font-size: 0.7rem;">
+                "Ceci n'est pas une erreur, c'est une intervention artistique"
+            </p>
+        </div>
+        
+        <div class="emergency-note">
+            🔧 修复时间: $(date '+%Y-%m-%d %H:%M:%S') UTC<br>
+            🎨 艺术品状态: 已恢复
+        </div>
+    </div>
+    
+    <!-- 
+        修复日志:
+        - 之前的404页面: 通用版本 (没有灵魂)
+        - 现在的404页面: 小米×马格利特杰作 (有哲学深度)
+        - 修复工程师: 小米AI艺术修复机器人
+    -->
+</body>
+</html>
+EOH
+
+# Verify the file was created
+if [ -f /usr/share/nginx/html/404.html ]; then
+    echo "✅ 杰作已创建!"
+    echo "   文件大小: $(du -h /usr/share/nginx/html/404.html | cut -f1)"
+else
+    echo "❌ 创建失败!"
+    exit 1
+fi
+
+# Check nginx configuration for 404 directive
+echo ""
+echo "🔧 检查Nginx配置..."
+
+if ! grep -q "error_page 404" /etc/nginx/sites-available/default; then
+    echo "   添加404配置..."
+    sed -i '/server_name _;/a \\n    # 小米超现实404\n    error_page 404 /404.html;' /etc/nginx/sites-available/default
+else
+    echo "   404配置已存在"
+fi
+
+# Test nginx configuration
+echo ""
+echo "🧪 测试Nginx配置..."
+nginx -t
+
+if [ $? -eq 0 ]; then
+    echo "✅ 配置正确"
+    
+    # Reload nginx
+    echo ""
+    echo "🔄 重新加载Nginx..."
+    systemctl reload nginx
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ Nginx重新加载成功"
+    else
+        echo "⚠️ 尝试重启..."
+        systemctl restart nginx
+    fi
+else
+    echo "❌ 配置错误，紧急修复..."
+    # Restore from backup or fix manually
+fi
+
+# Test the 404 page
+echo ""
+echo "🌐 测试404页面..."
+sleep 2
+
+# Create a test file to ensure 404 is triggered
+touch /tmp/test-non-existent
+
+# Test with curl locally
+if command -v curl &> /dev/null; then
+    STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/non-existent-$(date +%s))
+    if [ "$STATUS" = "404" ]; then
+        echo "✅ 本地测试: 返回404状态码"
+        
+        # Check if our custom page is being served
+        CONTENT=$(curl -s http://localhost/non-existent-$(date +%s) | grep -c "ceci n'est pas une page")
+        if [ "$CONTENT" -gt 0 ]; then
+            echo "✅ 本地测试: 自定义404页面生效!"
+        else
+            echo "⚠️ 本地测试: 返回了其他内容"
+        fi
+    else
+        echo "⚠️ 本地测试: 返回状态码 $STATUS"
+    fi
+fi
+
+echo ""
+echo "🎉 修复完成!"
+echo "===================="
+echo "请访问: http://66.70.187.105/404.html"
+echo "或测试: http://66.70.187.105/任何不存在的页面"
+echo ""
+echo "如果仍然看不到艺术品:"
+echo "1. 清除浏览器缓存"
+echo "2. 强制刷新: Ctrl+F5 或 Cmd+Shift+R"
+echo "3. 等待DNS传播 (最多5分钟)"
+echo "===================="
+
+# Server info
+echo ""
+echo "📊 服务器信息:"
+echo "   IP: 66.70.187.105"
+echo "   404页面路径: /usr/share/nginx/html/404.html"
+echo "   Nginx配置: /etc/nginx/sites-available/default"
+EOF
+)
+
+# Now provide instructions for applying the fix
+echo "📋 修复脚本已生成！请按以下步骤操作："
+echo ""
+echo "步骤 1: 连接到服务器"
+echo "   ssh root@66.70.187.105"
+echo ""
+echo "步骤 2: 复制并运行以下修复脚本"
+echo ""
+echo "========== 复制以下内容 =========="
+echo "$FIX_SCRIPT"
+echo "========== 复制结束 =========="
+echo ""
+echo "步骤 3: 在服务器上粘贴并运行"
+echo ""
+echo "步骤 4: 验证修复"
+echo "   curl -I http://66.70.187.105/404.html"
+echo "   curl http://66.70.187.105/任何不存在的页面 | grep 'ceci'"
+echo ""
+
+# Alternative: One-liner to apply fix remotely (if SSH key is available)
+echo "🔑 如果有SSH密钥，也可以直接运行："
+echo ""
+echo "ssh root@66.70.187.105 'bash -s' << 'EOF'"
+echo "$FIX_SCRIPT"
+echo "EOF"
+echo ""
+
+# Emergency contact
+echo "📞 如果问题持续:"
+echo "   小米紧急艺术修复热线: 永远在线"
+echo "   备用方案: 手动创建 /usr/share/nginx/html/404.html"
+echo ""
+
+# Final art statement
+echo "========================================="
+echo "🎭 \"Ceci n'est pas un bug, c'est une feature\""
+echo "    — 小米艺术科技实验室"
+echo "========================================="

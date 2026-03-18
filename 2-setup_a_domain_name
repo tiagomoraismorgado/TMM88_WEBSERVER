@@ -1,0 +1,405 @@
+#!/usr/bin/env bash
+# cecinestpasun.site - The Magritte-inspired server configuration
+# "Ceci n'est pas un serveur" (This is not a server)
+
+# 小米超现实主义实验室 presents:
+echo "🎨 小米艺术科技实验室 · 马格利特特别版"
+echo "=========================================="
+echo "\"Ceci n'est pas un serveur\""
+echo "    — 勒内·马格利特 (René Magritte)"
+echo "=========================================="
+echo ""
+
+# 小米艺术宣言
+echo "🖼️  就像马格利特的烟斗不是烟斗，"
+echo "   这台服务器也不是普通的服务器，"
+echo "   而是一件小米艺术科技的作品。"
+echo ""
+
+# 超现实安装过程 (就像烟斗的幻象)
+echo "🐌 正在安装 Nginx ... 或者不是？"
+echo "    (Ceci n'est pas une installation)"
+apt-get update > /dev/null 2>&1
+apt-get -y install nginx > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "✅ 安装完成 ... 但这真的是安装吗？"
+else
+    echo "❌ 失败？或许失败本身就是一种艺术"
+    exit 1
+fi
+echo ""
+
+# 备份原有的现实 (创造新的幻象)
+echo "📦 备份原有的 index.html ..."
+echo "   保存现实，就像马格利特保存烟斗的形状"
+if [ -f /usr/share/nginx/html/index.html ]; then
+    mv /usr/share/nginx/html/index.html /usr/share/nginx/html/ceci-nest-pas-un-index.html.backup
+    echo "✅ 现实已被归档"
+else
+    echo "ℹ️  这里什么都没有 ... 或者什么都有？"
+fi
+echo ""
+
+# 创建马格利特风格的页面
+echo "✍️  绘制超现实主义页面..."
+echo "   用代码模仿马格利特的画笔"
+
+cat > /usr/share/nginx/html/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ceci n'est pas un site · 小米艺术科技</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* 超现实主义的云 - 致敬马格利特 */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 0;
+        }
+        
+        .cloud1 {
+            width: 300px;
+            height: 100px;
+            top: 10%;
+            left: -50px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .cloud2 {
+            width: 400px;
+            height: 150px;
+            bottom: 10%;
+            right: -80px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cloud3 {
+            width: 200px;
+            height: 80px;
+            top: 60%;
+            left: 20%;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        /* 画框 - 这不是一个网站，这是一幅画 */
+        .canvas {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.9);
+            backdrop-filter: blur(10px);
+            border: 20px solid #34495e;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .canvas:hover {
+            border-color: #e67e22;
+            box-shadow: 0 30px 60px rgba(230, 126, 34, 0.3);
+        }
+        
+        /* 烟斗 - 超现实主义的核心符号 */
+        .pipe {
+            font-size: 120px;
+            text-align: center;
+            margin: 20px 0;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+            transform: rotate(-5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .pipe:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        /* 马格利特著名的文字游戏 */
+        .magritte-text {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+            color: #ecf0f1;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            word-break: break-word;
+        }
+        
+        .magritte-text span {
+            display: inline-block;
+            background: #e67e22;
+            padding: 5px 15px;
+            margin: 5px;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            transform: skew(-5deg);
+        }
+        
+        /* 小米元素 - 未来的超现实主义 */
+        .xiaomi-presence {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .mi-object {
+            text-align: center;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 2rem;
+            filter: grayscale(50%);
+        }
+        
+        .mi-object:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+        
+        .mi-object span {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            color: #bdc3c7;
+        }
+        
+        /* 这不是一个描述，这是一个谜题 */
+        .riddle {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #e67e22;
+            font-size: 1.2rem;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .riddle::before {
+            content: "?";
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        /* 签名 - 马格利特和小米的融合 */
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #95a5a6;
+            border-top: 1px dashed #7f8c8d;
+            padding-top: 20px;
+        }
+        
+        .signature strong {
+            color: #e67e22;
+            font-weight: 600;
+        }
+        
+        /* 响应式设计 - 就像现实的多重维度 */
+        @media (max-width: 600px) {
+            .canvas {
+                padding: 20px;
+                border-width: 10px;
+            }
+            
+            .magritte-text {
+                font-size: 1.5rem;
+            }
+            
+            .pipe {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 超现实的云 - 漂浮在现实与虚幻之间 -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    
+    <!-- 这不是一个网站，这是一幅画 -->
+    <div class="canvas">
+        <!-- 这不是一个烟斗 -->
+        <div class="pipe">🪤</div>
+        
+        <!-- 马格利特的经典宣言 -->
+        <div class="magritte-text">
+            ceci n'est pas un site
+        </div>
+        
+        <!-- 这不是一个普通的标题 -->
+        <div class="magritte-text" style="font-size: 1rem; text-transform: none;">
+            <span>ceci n'est pas un serveur</span>
+            <span>ceci n'est pas nginx</span>
+            <span>ceci n'est pas ubuntu</span>
+        </div>
+        
+        <!-- 小米物体 - 这不是普通的科技产品 -->
+        <div class="xiaomi-presence">
+            <div class="mi-object">
+                📱
+                <span>ceci n'est pas<br>un téléphone</span>
+            </div>
+            <div class="mi-object">
+                🖥️
+                <span>ceci n'est pas<br>un écran</span>
+            </div>
+            <div class="mi-object">
+                🌐
+                <span>ceci n'est pas<br>internet</span>
+            </div>
+            <div class="mi-object">
+                ⚡
+                <span>ceci n'est pas<br>l'électricité</span>
+            </div>
+        </div>
+        
+        <!-- 谜题 - 现实的多重性 -->
+        <div class="riddle">
+            <p><strong>Q:</strong> Qu'est-ce que c'est? (这是什么？)</p>
+            <p><strong>A:</strong> Ceci n'est pas une réponse. (这不是答案)</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                就像小米的智能设备不是设备，而是通往未来的窗口。<br>
+                这台服务器不是服务器，而是一面镜子，反射着我们对现实的认知。
+            </p>
+        </div>
+        
+        <!-- 艺术家签名 + 小米印记 -->
+        <div class="signature">
+            <p>René Magritte · 1929 (reimagined 2026)</p>
+            <p><strong>⚡ 小米艺术科技实验室 · 为超现实发烧而生 ⚡</strong></p>
+            <p style="font-size: 0.7rem; margin-top: 10px;">
+                "Pour rendre le mystère visible" — 让神秘可见<br>
+                (Ceci n'est pas un serveur, c'est une fenêtre sur l'invisible)
+            </p>
+        </div>
+    </div>
+    
+    <!-- 隐藏的现实层 - 只有懂的人能看到 -->
+    <!-- 
+        hello a software development program Rocks!
+        这个注释不是注释，而是一个隐藏的现实。
+        它存在，同时不存在。
+        就像马格利特的画，就像小米的未来。
+    -->
+</body>
+</html>
+EOF
+
+# 验证页面的存在 ... 或者不存在
+if [ -f /usr/share/nginx/html/index.html ]; then
+    echo "✅ 页面已创建 ... 但这不是一个页面"
+else
+    echo "❌ 页面不存在 ... 这正是马格利特想要的"
+fi
+echo ""
+
+# 重启 Nginx ... 这不是重启
+echo "🔄 重启 Nginx 服务 ..."
+echo "   或者只是改变了它的存在形式"
+service nginx restart > /dev/null 2>&1
+
+# 小米超现实检测器
+echo ""
+echo "🔍 小米AIoT 超现实探测器正在扫描..."
+sleep 2
+
+# 获取IP地址 ... 这不是IP
+SERVER_IP=$(hostname -I | awk '{print $1}')
+echo ""
+echo "🎨 小米艺术科技 presents:"
+echo "==========================================="
+echo "\"cecinestpasun.site\""
+echo "==========================================="
+echo ""
+echo "🌐 访问地址: http://$SERVER_IP"
+echo "   (Ceci n'est pas une adresse IP)"
+echo ""
+echo "📁 文件位置: /usr/share/nginx/html/index.html"
+echo "   (Ceci n'est pas un fichier)"
+echo ""
+echo "⏰ 创作时间: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "   (Ceci n'est pas le temps)"
+echo ""
+echo "📱 用小米手机扫码访问这个非网站:"
+echo "   [这不是一个二维码]"
+echo "   ░░░░░░░░░░░░░░░░░░░░"
+echo "   ░░  ░░░░  ░░░░  ░░"
+echo "   ░░  ░░░░  ░░░░  ░░"
+echo "   ░░  ░░░░  ░░░░  ░░"
+echo "   ░░░░░░░░░░░░░░░░░░░░"
+echo ""
+echo "🎭 马格利特说: \"Ceci n'est pas une configuration.\""
+echo "   小米说: \"为超现实发烧而生\""
+echo ""
+echo "   这台服务器不是服务器，"
+echo "   它是一个哲学问题，"
+echo "   披着代码的外衣，"
+echo "   戴着小米的面具。"
+echo "==========================================="
+
+# 哲学思考
+echo ""
+echo "🤔 思考题:"
+echo "   如果这个网站不是网站，"
+echo "   那你在看什么？"
+echo "   如果你在看，"
+echo "   那看的主体是什么？"
+echo "   被看的客体又是什么？"
+echo ""
+echo "   小米澎湃OS说: \"连接一切\""
+echo "   包括连接现实与虚幻。"
+echo ""
+
+# 可选：curl测试 - 这不是测试
+if command -v curl &> /dev/null; then
+    echo "🔮 小爱同学说: \"让我看看这个非网站...\""
+    sleep 1
+    echo "    我看到了一个烟斗，但它不是烟斗。"
+    echo "    我看到了一个网站，但它不是网站。"
+    echo "    我看到了小米，但它不仅仅是小米。"
+    echo ""
+fi
+
+exit 0

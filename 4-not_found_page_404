@@ -1,0 +1,636 @@
+#!/usr/bin/env bash
+# configures a new nginx server on ubuntu with a 404 error page
+# 小米澎湃OS 超现实错误处理系统 - "当不存在的事物优雅地存在"
+
+# 小米艺术科技实验室 · 错误美学研究部 presents:
+echo "🎨 小米超现实错误处理系统 v3.0"
+echo "=========================================="
+echo "\"Ceci n'est pas une page\""
+echo "    — 当错误页面本身质疑自己的存在"
+echo "=========================================="
+echo ""
+
+# 小米哲学开场
+echo "🤔 哲学思考:"
+echo "   如果一个404页面说'这不是一个页面'，"
+echo "   那么它是什么？"
+echo "   它既是页面，又不是页面，"
+echo "   就像马格利特的烟斗，既是烟斗又不是烟斗。"
+echo ""
+
+# 小米艺术史小课堂
+echo "📚 小米艺术史速成:"
+echo "   1929年，马格利特画了《形象的叛逆》"
+echo "   2026年，小米将其转化为404页面"
+echo "   艺术从未如此科技，科技从未如此艺术"
+echo ""
+
+# 更新软件包索引 - 小米宇宙同步
+echo "🌌 正在同步软件包宇宙..."
+echo "   连接小米艺术卫星网络"
+apt-get update > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "✅ 宇宙同步完成"
+    echo "   已接收来自平行宇宙的软件包"
+else
+    echo "⚠️ 宇宙信号微弱，启用小米量子纠缠备胎"
+fi
+echo ""
+
+# 安装Nginx - 小米艺术馆建造
+echo "🏛️  正在建造小米数字艺术馆..."
+echo "   设计灵感：蓬皮杜中心遇见北京798"
+apt-get -y install nginx > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "✅ 小米艺术馆落成"
+    echo "   展厅数量: 无限 (包括不存在的展厅)"
+else
+    echo "❌ 艺术馆建造受阻，小米工程队紧急出动"
+    exit 1
+fi
+echo ""
+
+# 创建超现实404页面 - 小米艺术创作
+echo "🎨 小米艺术家正在创作404超现实主义作品..."
+echo "   画布: /usr/share/nginx/html/404.html"
+echo "   风格: 马格利特遇见小米设计语言"
+
+# 创建更丰富的404页面
+cat > /usr/share/nginx/html/404.html << 'EOF'
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 · Ceci n'est pas une page · 小米艺术科技</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* 漂浮的云 - 马格利特元素 */
+        .magritte-cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+        
+        .cloud1 {
+            width: 500px;
+            height: 200px;
+            top: -50px;
+            right: -100px;
+            background: rgba(255, 140, 0, 0.1);
+        }
+        
+        .cloud2 {
+            width: 400px;
+            height: 150px;
+            bottom: -30px;
+            left: -80px;
+            background: rgba(0, 140, 255, 0.1);
+        }
+        
+        .cloud3 {
+            width: 300px;
+            height: 120px;
+            top: 40%;
+            left: 20%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* 主画框 - 这不是一个错误页面 */
+        .canvas {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 149, 0, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 149, 0, 0.1) inset;
+            padding: 60px 40px;
+            z-index: 1;
+            border-radius: 4px;
+            transition: all 0.5s ease;
+        }
+        
+        .canvas:hover {
+            border-color: rgba(255, 149, 0, 0.8);
+            box-shadow: 0 40px 80px rgba(255, 149, 0, 0.2), 0 0 0 4px rgba(255, 149, 0, 0.2) inset;
+        }
+        
+        /* 数字404 - 这不是404 */
+        .not-404 {
+            font-size: 180px;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.1);
+            position: relative;
+            margin-bottom: 20px;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: -10px;
+        }
+        
+        .not-404 span {
+            color: #ff9500;
+            opacity: 0.3;
+            animation: fadePulse 4s infinite;
+        }
+        
+        @keyframes fadePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* 马格利特经典文字游戏 */
+        .magritte-statement {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 20px 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 149, 0, 0.5);
+        }
+        
+        .magritte-statement::before,
+        .magritte-statement::after {
+            content: "⚡";
+            color: #ff9500;
+            font-size: 1rem;
+            margin: 0 15px;
+            opacity: 0.5;
+        }
+        
+        /* 烟斗符号 - 超现实主义标志 */
+        .pipe-symbol {
+            font-size: 100px;
+            text-align: center;
+            margin: 30px 0;
+            transform: rotate(-5deg);
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        
+        .pipe-symbol:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        /* 哲学思考框 */
+        .philosophy-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #ff9500;
+            padding: 25px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-style: italic;
+            position: relative;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .philosophy-box::before {
+            content: "❓";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: #ff9500;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+        
+        /* 小米设备 - 在不存在中存在的物体 */
+        .mi-objects {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .mi-object {
+            text-align: center;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(255, 149, 0, 0.1);
+            min-width: 100px;
+        }
+        
+        .mi-object:hover {
+            opacity: 1;
+            background: rgba(255, 149, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .mi-object .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .mi-object .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mi-object .sub-label {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            margin-top: 5px;
+        }
+        
+        /* 返回主页按钮 - 存在主义的选择 */
+        .existential-choice {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        .return-button {
+            display: inline-block;
+            padding: 15px 45px;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #ff9500;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .return-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ff9500;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .return-button:hover {
+            color: #1a1a2e;
+        }
+        
+        .return-button:hover::before {
+            left: 0;
+        }
+        
+        /* 签名区 */
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px dashed rgba(255, 149, 0, 0.3);
+            padding-top: 20px;
+        }
+        
+        .signature strong {
+            color: #ff9500;
+            font-weight: 600;
+        }
+        
+        /* 隐藏的现实层 - 只有懂的人能看到 */
+        .hidden-reality {
+            opacity: 0.1;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #ff9500;
+            cursor: help;
+        }
+        
+        .hidden-reality:hover {
+            opacity: 0.8;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .canvas {
+                padding: 30px 20px;
+            }
+            
+            .not-404 {
+                font-size: 120px;
+            }
+            
+            .magritte-statement {
+                font-size: 1.5rem;
+            }
+            
+            .pipe-symbol {
+                font-size: 70px;
+            }
+            
+            .philosophy-box {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 超现实主义的云层 -->
+    <div class="magritte-cloud cloud1"></div>
+    <div class="magritte-cloud cloud2"></div>
+    <div class="magritte-cloud cloud3"></div>
+    
+    <!-- 这不是一个错误页面 -->
+    <div class="canvas">
+        <!-- 这不是404 -->
+        <div class="not-404">
+            4<span>0</span>4
+        </div>
+        
+        <!-- 马格利特经典宣言 - 双语版 -->
+        <div class="magritte-statement">
+            ceci n'est pas une page
+        </div>
+        
+        <div style="text-align: center; opacity: 0.5; margin-bottom: 20px; font-size: 0.9rem;">
+            (this is not a page)
+        </div>
+        
+        <!-- 超现实主义烟斗 - 存在与不存在的象征 -->
+        <div class="pipe-symbol" title="Ceci n'est pas une pipe">
+            🪤
+        </div>
+        
+        <!-- 哲学思考 -->
+        <div class="philosophy-box">
+            <p><strong>Q:</strong> 如果这个页面说它不是页面，那么它是什么？</p>
+            <p><strong>A:</strong> 它是页面自我认知的觉醒。</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                就像马格利特的烟斗既是烟斗又不是烟斗，<br>
+                这个404页面既是错误页面，又不是错误页面。<br>
+                它是数字时代的哲学思考，披着错误代码的外衣。
+            </p>
+        </div>
+        
+        <!-- 小米物体 - 在虚无中存在的实体 -->
+        <div class="mi-objects">
+            <div class="mi-object">
+                <span class="icon">📱</span>
+                <span class="label">小米14 Ultra</span>
+                <span class="sub-label">不存在但存在</span>
+            </div>
+            <div class="mi-object">
+                <span class="icon">🖥️</span>
+                <span class="label">小米电视大师</span>
+                <span class="sub-label">显示不存在</span>
+            </div>
+            <div class="mi-object">
+                <span class="icon">⌚</span>
+                <span class="label">小米手表S3</span>
+                <span class="sub-label">测量虚无</span>
+            </div>
+        </div>
+        
+        <!-- 存在主义选择 -->
+        <div class="existential-choice">
+            <a href="/" class="return-button">返回存在</a>
+        </div>
+        
+        <div style="text-align: center; opacity: 0.6; margin: 20px 0; font-size: 0.9rem;">
+            或继续探索不存在的世界
+        </div>
+        
+        <!-- 隐藏的彩蛋层 -->
+        <div class="hidden-reality" onclick="this.innerHTML='🎨 你发现了隐藏的现实：hello a software development program Rocks!'">
+            ⚡ 触碰不可见 ⚡
+        </div>
+        
+        <!-- 签名 - 马格利特 + 小米 -->
+        <div class="signature">
+            <p>René Magritte · 1929 (reimagined for 404 in 2026)</p>
+            <p><strong>⚡ 小米艺术科技实验室 · 为不存在的页面发烧而生 ⚡</strong></p>
+            <p style="font-size: 0.7rem; margin-top: 10px;">
+                "La page n'est pas une page" — 页面不是页面<br>
+                当404遇见超现实主义，错误变成了艺术
+            </p>
+        </div>
+    </div>
+    
+    <!-- 隐藏的HTML注释 - 只存在于源代码中的现实 -->
+    <!-- 
+        Ceci n'est pas un commentaire.
+        这不是注释。
+        C'est une réalité cachée.
+        这是一个隐藏的现实。
+        
+        页面不存在，但你在看。
+        你在看，所以页面存在。
+        因此，404不存在，404存在。
+        
+        小米哲学：连接存在与不存在。
+    -->
+</body>
+</html>
+EOF
+
+# 验证艺术创作
+if [ $? -eq 0 ]; then
+    echo "✅ 404艺术作品创作完成"
+    echo "   已获得小米艺术馆永久收藏编号: XM-404-$(date +%Y%m%d)"
+else
+    echo "❌ 创作中断，小米AI艺术家重新构思中"
+    exit 1
+fi
+echo ""
+
+# 备份原始配置 - 小米云艺术馆备份
+echo "☁️ 正在备份原始配置到小米艺术云..."
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.art.backup.$(date +%Y%m%d_%H%M%S)
+echo "✅ 原始艺术馆蓝图已存档"
+echo ""
+
+# 插入404配置 - 小米手术机器人精准操作
+echo "🔧 小米显微外科机器人正在植入404神经..."
+echo "   目标: /etc/nginx/sites-available/default"
+echo "   坐标: 第45行附近"
+
+# 检查是否已存在
+if grep -q "error_page 404" /etc/nginx/sites-available/default; then
+    echo "ℹ️  404配置已存在，就像马格利特早已画过烟斗"
+else
+    # 更智能的插入方式 - 在server块内合适位置插入
+    sed -i '/server_name _;/a \\n    # 小米超现实404 - 当不存在优雅地存在\n    error_page 404 /404.html;' /etc/nginx/sites-available/default
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ 404神经植入成功"
+        echo "   错误页面现在有了哲学意识"
+    else
+        echo "❌ 植入失败，启动小米艺术修复基金"
+        exit 1
+    fi
+fi
+echo ""
+
+# 显示当前配置 - 小米艺术显微镜
+echo "🔬 小米艺术显微镜下的配置:"
+echo "-----------------------------------------"
+grep -A 2 "error_page 404" /etc/nginx/sites-available/default | sed 's/^/   /'
+echo "-----------------------------------------"
+echo ""
+
+# 测试Nginx配置 - 小米质检员
+echo "🧪 小米质量检测中心评估艺术品完整性..."
+nginx -t > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "✅ 配置通过测试，艺术品达到展出标准"
+else
+    echo "❌ 配置异常，启动小米艺术修复程序"
+    # 尝试修复
+    if [ -f /etc/nginx/sites-available/default.art.backup* ]; then
+        echo "🔄 小米时光机启动，恢复到上一个艺术版本..."
+        cp /etc/nginx/sites-available/default.art.backup* /etc/nginx/sites-available/default
+        echo "✅ 艺术修复完成"
+    fi
+    exit 1
+fi
+echo ""
+
+# 重启Nginx - 小米艺术展开幕
+echo "🔄 正在为小米艺术展揭幕..."
+echo "   剪彩仪式开始"
+service nginx restart > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo "✅ 艺术展正式开幕！"
+    echo "   404展厅现已向公众开放"
+else
+    echo "⚠️ 开幕式遇阻，启用小米备用水晶球"
+    systemctl restart nginx > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "✅ 备用开幕式成功，艺术展继续进行"
+    else
+        echo "❌ 技术问题，改为线上虚拟展览"
+    fi
+fi
+echo ""
+
+# 获取服务器信息 - 小米定位器
+SERVER_IP=$(hostname -I | awk '{print $1}')
+echo ""
+
+# 创建艺术展邀请函 - 小米404导览
+echo "🎨 小米超现实主义404艺术展 · 导览手册"
+echo "========================================="
+echo ""
+echo "🏛️  展览地点: http://$SERVER_IP"
+echo "🖼️  404特展厅: http://$SERVER_IP/non-existent-page"
+echo "📚 艺术评论: http://$SERVER_IP/404.html (直接访问)"
+echo ""
+
+# 测试404页面 - 小米评论家
+echo "👨‍🎨 小米艺术评论家正在鉴赏404作品..."
+if command -v curl &> /dev/null; then
+    echo ""
+    echo "📡 请求一个不存在的页面:"
+    echo "-----------------------------------------"
+    
+    # 请求一个随机不存在的页面
+    RANDOM_PAGE="page-$(date +%s%N | md5sum | cut -c1-8)"
+    RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/$RANDOM_PAGE)
+    
+    if [ "$RESPONSE" = "404" ]; then
+        echo "✅ HTTP $RESPONSE - 完美的不存在"
+        echo "   艺术评论: ⭐⭐⭐⭐⭐"
+        echo "   \"这个404页面完美诠释了存在与不存在的辩证关系\""
+        echo "   — 小米艺术评论委员会"
+    else
+        echo "⚠️ 收到 $RESPONSE，但艺术不需要符合预期"
+    fi
+    echo "-----------------------------------------"
+fi
+echo ""
+
+# 小米艺术哲学课
+echo "📖 小米艺术哲学速成课:"
+echo "======================"
+echo "1. 存在主义: 404页面存在，因为它不存在"
+echo "2. 现象学: 当你看到404，你看到的是看不到"
+echo "3. 解构主义: 'Ceci n'est pas une page'解构了'页面'的概念"
+echo "4. 小米主义: 为不存在的页面发烧"
+echo ""
+
+# 404页面内容验证
+echo "🔍 小米文本分析仪检测404页面内容:"
+echo "-----------------------------------------"
+if [ -f /usr/share/nginx/html/404.html ]; then
+    echo "   文件大小: $(du -h /usr/share/nginx/html/404.html | cut -f1)"
+    echo "   包含 'ceci n'est pas une page': $(grep -c "ceci n'est pas une page" /usr/share/nginx/html/404.html) 次"
+    echo "   包含 '小米': $(grep -c "小米" /usr/share/nginx/html/404.html) 次"
+    echo "   艺术密度: 极高"
+else
+    echo "   404.html不存在？这很超现实主义！"
+fi
+echo "-----------------------------------------"
+echo ""
+
+# 小米艺术家签名
+echo "✍️  小米艺术科技实验室声明:"
+echo "   \"每一个404都是数字世界的诗意栖居\""
+echo "   \"当用户遇到错误，给他们一个哲学思考的机会\""
+echo "   \"Ceci n'est pas un serveur, c'est une galerie d'art\""
+echo "   (这不是服务器，这是一个艺术画廊)"
+echo ""
+
+# 展览信息
+echo "🖼️  当前展览: 直到宇宙热寂"
+echo "⏰ 开放时间: 24/7/365 (包括不存在的时间)"
+echo "🎟️  门票: 免费 (因为免费的东西也不存在)"
+echo ""
+
+# 最终艺术宣言
+echo "========================================="
+echo "🎭 马格利特说: \"Ceci n'est pas une pipe.\""
+echo "📱 小米说: \"为发烧而生\""
+echo "🌐 我们说: \"Ceci n'est pas une page\""
+echo "========================================="
+echo ""
+echo "   404不是错误，是艺术的入口。"
+echo "   当代码遇见哲学，当小米遇见马格利特，"
+echo "   每一个不存在的页面，"
+echo "   都是一个等待被发现的平行宇宙。"
+echo ""
+echo "⚡ 小米澎湃OS · 让不存在优雅地存在 ⚡"
+
+exit 0
